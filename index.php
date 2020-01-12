@@ -1,10 +1,10 @@
 <?php
 require_once 'jsonRPCClient.php';
 
-$bitcoin = new jsonRPCClient('http://user:pass@127.0.0.1:8332/');
+$sumcoin = new jsonRPCClient('http://user:password@127.0.0.1:3332/');
 
 try {
-	$info = $bitcoin->getinfo();
+	$info = $sumcoin->getinfo();
 } catch (Exception $e) {
 	echo nl2br($e->getMessage()).'<br />'."\n"; 
 	die();
@@ -139,10 +139,10 @@ function GetFileContents($filename) {
 			<tr><td><b>Approximate block generation time:</b></td><td align = "right"><?=number_format($avgBlockTime, 2);?> minutes</td></tr>
 			<tr><td><b>Approximate blocks generated per day:</b></td><td align = "right"><?=$blocksPerDay;?></td></tr>
 			<tr><td><b>Difficulty:</b></td><td align = "right"><?=number_format($info['difficulty']);?></td></tr>
-			<tr><td><b>Hash rate:</b></td><td align = "right"><?=number_format($bitcoin->getnetworkhashps() / 1000 / 1000 / 1000 / 1000 / 1000 / 1000, 2) . ' Exahashes/s';?></td></tr>
+			<tr><td><b>Hash rate:</b></td><td align = "right"><?=number_format($sumcoin->getnetworkhashps() / 1000 / 1000 / 1000 / 1000 / 1000 / 1000, 2) . ' Exahashes/s';?></td></tr>
 		</table>
 		<div style="text-align:center">
-			<img src="../images/bitcoin.png" width="100px"; height="100px">
+			<img src="../images/sumcoin.png" width="100px"; height="100px">
 			<br/>
 			<h2><a href="http://www.litecoinblockhalf.com">Litecoin Block Halving Countdown</a></h2>
 		</div>

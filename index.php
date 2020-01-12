@@ -10,7 +10,7 @@ try {
 	die();
 }
 
-// Bitcoin settings
+// Sumcoin settings
 $blockStartingReward = 50;
 $blockHalvingSubsidy = 210000;
 $blockTargetSpacing = 10;
@@ -91,10 +91,10 @@ function GetFileContents($filename) {
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Bitcoin Block Reward Halving Countdown website">
+	<meta name="description" content="Sumcoin Block Reward Halving Countdown website">
 	<meta name="author" content="">
 	<link rel="shortcut icon" href="favicon.png">
-	<title>Bitcoin Block Reward Halving Countdown</title>
+	<title>Sumcoin Block Reward Halving Countdown</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/flipclock.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -103,7 +103,7 @@ function GetFileContents($filename) {
 <body>
 	<div class="container">
 		<div class="page-header" style="text-align:center">
-			<h3>Bitcoin Block Reward Halving Countdown</h3>
+			<h3>Sumcoin Block Reward Halving Countdown</h3>
 		</div>
 		<div class="flip-counter clock" style="display: flex; align-items: center; justify-content: center;"></div>
 		<script type="text/javascript">
@@ -118,22 +118,22 @@ function GetFileContents($filename) {
 		</script>
 		<div style="text-align:center">
 			Reward-Drop ETA date: <strong><?=date('d M Y H:i:s', strtotime($blockString, time()))?></strong><br/><br/>
-			<p>The Bitcoin block mining reward halves every <?=number_format($blockHalvingSubsidy)?> blocks, the coin reward will decrease from <?=$blockReward?> to <?=$blockReward / 2 ?> coins. 
+			<p>The Sumcoin block mining reward halves every <?=number_format($blockHalvingSubsidy)?> blocks, the coin reward will decrease from <?=$blockReward?> to <?=$blockReward / 2 ?> coins. 
 			<br/><br/>
 		</div>
 		<table class="table table-striped">
-			<tr><td><b>Total Bitcoins in circulation:</b></td><td align = "right"><?=number_format($coins)?></td></tr>
-			<tr><td><b>Total Bitcoins to ever be produced:</b></td><td align = "right"><?=number_format($maxCoins)?></td></tr>
-			<tr><td><b>Percentage of total Bitcoins mined:</b></td><td align = "right"><?=number_format($coins / $maxCoins * 100 / 1, 4)?>%</td></tr>
-			<tr><td><b>Total Bitcoins left to mine:</b></td><td align = "right"><?=number_format($maxCoins - $coins)?></td></tr>
-			<tr><td><b>Total Bitcoins left to mine until next blockhalf:</b></td><td align = "right"><?= number_format($coinsRemaining);?></td></tr>
-			<tr><td><b>Bitcoin price (USD):</b></td><td align = "right">$<?=number_format($price, 2);?></td></tr>
+			<tr><td><b>Total Sumcoins in circulation:</b></td><td align = "right"><?=number_format($coins)?></td></tr>
+			<tr><td><b>Total Sumcoins to ever be produced:</b></td><td align = "right"><?=number_format($maxCoins)?></td></tr>
+			<tr><td><b>Percentage of total Sumcoins mined:</b></td><td align = "right"><?=number_format($coins / $maxCoins * 100 / 1, 4)?>%</td></tr>
+			<tr><td><b>Total Sumcoins left to mine:</b></td><td align = "right"><?=number_format($maxCoins - $coins)?></td></tr>
+			<tr><td><b>Total Sumcoins left to mine until next blockhalf:</b></td><td align = "right"><?= number_format($coinsRemaining);?></td></tr>
+			<tr><td><b>Sumcoin price (USD):</b></td><td align = "right">$<?=number_format($price, 2);?></td></tr>
 			<tr><td><b>Market capitalization (USD):</b></td><td align = "right">$<?=number_format($coins * $price, 2);?></td></tr>
-			<tr><td><b>Bitcoins generated per day:</b></td><td align = "right"><?=number_format($blocksPerDay * $blockReward);?></td></tr>	
-			<tr><td><b>Bitcoin inflation rate per annum:</b></td><td align = "right"><?=number_format($inflationRate * 100 / 1, 2);?>%</td></tr>
-			<tr><td><b>Bitcoin inflation rate per annum at next block halving event:</b></td><td align = "right"><?=number_format($inflationRateNextHalving * 100 / 1, 2);?>%</td></tr>
-			<tr><td><b>Bitcoin inflation per day (USD):</b></td><td align = "right">$<?=number_format($blocksPerDay * $blockReward * $price);?></td></tr>
-			<tr><td><b>Bitcoin inflation until next blockhalf event based on current price (USD):</b></td><td align = "right">$<?=number_format($coinsRemaining * $price);?></td></tr>
+			<tr><td><b>Sumcoins generated per day:</b></td><td align = "right"><?=number_format($blocksPerDay * $blockReward);?></td></tr>	
+			<tr><td><b>Sumcoin inflation rate per annum:</b></td><td align = "right"><?=number_format($inflationRate * 100 / 1, 2);?>%</td></tr>
+			<tr><td><b>Sumcoin inflation rate per annum at next block halving event:</b></td><td align = "right"><?=number_format($inflationRateNextHalving * 100 / 1, 2);?>%</td></tr>
+			<tr><td><b>Sumcoin inflation per day (USD):</b></td><td align = "right">$<?=number_format($blocksPerDay * $blockReward * $price);?></td></tr>
+			<tr><td><b>Sumcoin inflation until next blockhalf event based on current price (USD):</b></td><td align = "right">$<?=number_format($coinsRemaining * $price);?></td></tr>
 			<tr><td><b>Total blocks:</b></td><td align = "right"><?=number_format($blocks);?></td></tr>
 			<tr><td><b>Blocks until mining reward is halved:</b></td><td align = "right"><?=number_format($blocksRemaining);?></td></tr>
 			<tr><td><b>Approximate block generation time:</b></td><td align = "right"><?=number_format($avgBlockTime, 2);?> minutes</td></tr>

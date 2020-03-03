@@ -4,7 +4,7 @@ require_once 'jsonRPCClient.php';
 $sumcoin = new jsonRPCClient('http://user:password@127.0.0.1:3332/');
 
 try {
-	$info = $sumcoin->getinfo();
+	$info = $sumcoin->getblockchaininfo();
 } catch (Exception $e) {
 	echo nl2br($e->getMessage()).'<br />'."\n"; 
 	die();
